@@ -14,6 +14,7 @@ const path1 = "/snsapi/username/";
 const path2 = "/app/user/pro/stat?";
 const path3 = "/app/user/init?";
 const path4 = "/app/user/pro/isUserProAndNotExpired?";
+const path5 = "/app/user/.pay/checkIntroOfferPeriod?";
 
 const url = $request.url;
 let body = $response.body;
@@ -57,6 +58,13 @@ body = JSON.stringify(body);
 if (url.indexOf(path4) != -1){
 body = JSON.parse(body);
 body.data = true;
+body = JSON.stringify(body);
+}
+
+if (url.indexOf(path5) != -1){
+body = JSON.parse(body);
+body.data.hasSubscribeProduct = true;
+body.data.hasSvipSubscribeProduct = true;
 body = JSON.stringify(body);
 }
 
