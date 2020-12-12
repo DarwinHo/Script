@@ -4,7 +4,7 @@ by Primovist
 Surge:
 
 [Script]
-http-response ^https?:\/\/(i|newdrugs)\.dxy\.cn\/(snsapi\/username\/|app\/user\/(pro\/stat\?|init\?|pro\/isUserProAndNotExpired\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/yyzs.js
+http-response ^https?:\/\/(i|newdrugs)\.dxy\.cn\/(snsapi\/username\/|app\/user\/(pro\/stat\?|init\?|pro\/isUserProAndNotExpired\?|pay\/checkIntroOfferPeriod\?)) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/yyzs.js
 
 [MITM]
 hostname = newdrugs.dxy.cn
@@ -14,7 +14,7 @@ const path1 = "/snsapi/username/";
 const path2 = "/app/user/pro/stat?";
 const path3 = "/app/user/init?";
 const path4 = "/app/user/pro/isUserProAndNotExpired?";
-const path5 = "/app/user/.pay/checkIntroOfferPeriod?";
+const path5 = "/app/user/pay/checkIntroOfferPeriod?";
 
 const url = $request.url;
 let body = $response.body;
